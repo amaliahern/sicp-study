@@ -1,0 +1,27 @@
+        A                                                               B
+(define (+ a b)                                            (define (+ a b)
+  (if (= a 0)                                                    (if (= a 0)
+       b                                                                b
+       (inc (+ (dec a) b))))                                  (+ (dec a) (inc b))))
+
+			(define (inc a)
+    			    (+ 1 a))
+
+                                      (define (dec a)
+                                            (- a 1))
+
+(+ 4 5)                                                              (+ 4 5)
+(+ 1 (+ (- 4 1) 5))                                               (+ (- 4 1) (+ 1 5))
+(+ 1 (+ 3 5))                                                      (+ 3 6)
+(+ 1 8)                                                                9
+9
+
+                                                                            a   b  +
+                                                                      1|   4   5   0
+                                                                      2|   3   6   0
+                                                                      3|   3   6   9 
+
+El procedimiento A, se observa que es recursivo. El resultado permance oculto hasta el final,
+cuando ya se han hecho las llamadas y sustituciones a inc y a dec.
+El procedimiento B es lineal. En todo momento se puede saber cual es el valor de a y b, saber en que 
+punto nos encontramos de la evaluacion.
