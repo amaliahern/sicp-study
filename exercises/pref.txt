@@ -1,0 +1,1 @@
+cheme --batch-mode --eval "(set! load/suppress-loading-message? #t)" --eval '(set-working-directory-pathname! "/Proyectos/sicp-study/exercises")' --load exercises/all-test.scm --eval "(%exit (run-registered-tests))"
